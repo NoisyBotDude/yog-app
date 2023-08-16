@@ -3,25 +3,24 @@
     {
       "id": 1,
       "name": "Ashish",
-      "height": "5.7",
-      "weight": "67",
+      "height": "165",
+      "weight": "65",
       "age": "21",
-      "username": "ashish",
+      "username": "ashis",
       "password": "ashish123",
+      "email": "ashishsarmah11@gmail.com",
       "diet_preferences": {
-        "vegetarian": true,
-        "diabetes": false,
-        "medication": false,
+        "vegetarian": false,
+        "diabetes": true,
+        "medication": true,
         "grocery_available": [
-          "fruits",
-          "vegetables",
-          "rice",
-          "chicken"
+          "chicken",
+          "vegetables"
         ]
       },
       "nationality": "Indian",
-      "regionality": "South-Indian",
-      "calories_per_day_prescribed": 2000,
+      "regionality": "South-India",
+      "calories_per_day_prescribed": "200",
       "nutrition_partition": [
         {
           "protein": "120g",
@@ -82,6 +81,30 @@
           "gad7_score": 12,
           "phq9_score": 8,
           "interpretation": "You may be excessively sleepy depending on the situation. You may want to consider seeking medical attention."
+        },
+        {
+          "date": "2023-08-16",
+          "gad7_score": 3,
+          "phq9_score": 4,
+          "interpretation": "GAD-7: Mild anxiety, PHQ-9: Mild depression"
+        },
+        {
+          "date": "2023-08-16",
+          "gad7_score": 4,
+          "phq9_score": 3,
+          "interpretation": "GAD-7: Mild anxiety, PHQ-9: Mild depression"
+        },
+        {
+          "date": "2023-08-16",
+          "gad7_score": 10,
+          "phq9_score": 12,
+          "interpretation": "GAD-7: Moderate anxiety, PHQ-9: Moderately severe depression"
+        },
+        {
+          "date": "2023-08-16",
+          "gad7_score": 7,
+          "phq9_score": 9,
+          "interpretation": "GAD-7: Moderate anxiety, PHQ-9: Moderate depression"
         }
       ],
       "neuro_sleepiness": [
@@ -94,19 +117,34 @@
           "date": "2023-08-14",
           "score": 11,
           "interpretation": "You have an average amount of daytime sleepiness."
+        },
+        {
+          "date": "2023-08-16",
+          "score": 16,
+          "interpretation": "You are excessively sleepy."
         }
       ]
     },
     {
-      "username": "abinash",
-      "email": "ashishsarmah11@gmail.com",
-      "password": "As@222001",
+      "mental_health": [
+        {
+          "date": "2023-08-16",
+          "gad7_score": 1,
+          "phq9_score": 0,
+          "interpretation": "GAD-7: Mild anxiety, PHQ-9: Mild depression"
+        }
+      ],
       "id": 2
     },
     {
-      "username": "pranjal",
-      "email": "prajalkar@gmail.com",
-      "password": "pranjal123",
+      "mental_health": [
+        {
+          "date": "2023-08-16",
+          "gad7_score": 2,
+          "phq9_score": 2,
+          "interpretation": "GAD-7: Mild anxiety, PHQ-9: Mild depression"
+        }
+      ],
       "id": 3
     }
   ],
@@ -117,15 +155,6 @@
         "Good",
         "Okay",
         "Not so great"
-      ],
-      "selectedOption": null
-    },
-    {
-      "question": "Are you dumb?",
-      "options": [
-        "yes",
-        "maybe",
-        "Not so much"
       ],
       "selectedOption": null
     },
