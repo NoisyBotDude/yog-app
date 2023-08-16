@@ -11,6 +11,7 @@ import SignupPage from './pages/signup';
 import ProfilePage from './pages/profile';
 import HomePage from './pages/home';
 import LogoutPage from './pages/logout';
+import MindfulnessPage from './pages/mindfulness';
 
 import { createTheme, ThemeProvider } from '@mui/material';
 import { Menu } from '@mui/icons-material';
@@ -82,6 +83,10 @@ function App() {
       {
         path: "/logout",
         element: <LogoutPage />,
+      },
+      {
+        path: "/mindfulness",
+        element: <MindfulnessPage user={user}/>,
       }
     ]
   )
