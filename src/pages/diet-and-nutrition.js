@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, Typography, Button } from '@mui/material';
+import RecommendationCard from '../components/Recommendation';
 
 function DietAndNutrition (props) {
-    // const [recommendations, setRecommendations] = useState([]);
+    const [recommendations, setRecommendations] = useState([]);
+    const [showRecommendations, setShowRecommendations] = useState(false);
 
     const [userData, setUserData] = useState({
         age: 0,
+        height: 0,
+        weight: 0,
+        diet_preferences: {
+            vegetarian: false,
+            diabetes: false,
+            medication: false,
+            grocery_available: []
+        },
     })
     const [bmi, setBmi] = useState(0)
 
@@ -27,12 +37,39 @@ function DietAndNutrition (props) {
     }, [])
 
 
-    // const fetchRecommendations = async () => {
-    //     // API call to get recommendations
-    //     const response = await fetch('YOUR_API_ENDPOINT_HERE');
-    //     const data = await response.json();
-    //     setRecommendations(data);
-    // };
+    const fetchRecommendations = async () => {
+        // API call to get recommendations
+        // const response = await fetch('https://diet-bbz2.onrender.com/recommend');
+        // const data = await response.json();
+        // setRecommendations(data);
+        await fetch('https://diet-bbz2.onrender.com/recommend', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                bmi: bmi,
+                vag: userData.diet_preferences.vegetarian,
+                diabetes: userData.diet_preferences.diabetes,
+                meditation: userData.diet_preferences.medication ? "true" : "false",
+                gory: userData.diet_preferences.grocery_available.join(','),
+                nati: userData.nationality,
+                regionality: userData.regionality,
+                exercise: "walking",
+                goal: userData.calories_per_day_prescribed 
+            })
+        }).then((r) => {
+            if (r.ok) {
+                r.json().then((data) => {
+                    console.log(data);
+                    setRecommendations(data);
+                    setShowRecommendations(true);
+                });
+            }
+        }).catch((error) => {
+            console.log(error);
+        })
+    };
 
     return (
         <>
@@ -72,14 +109,13 @@ function DietAndNutrition (props) {
                     <Card style={{ width: '30%', backgroundColor: '#292929' }}>
                         <CardContent>
                             <Typography variant="h5" style={{ color: "#FFFFFF" }}>Recommendations</Typography>
-                            <Button variant="contained" color="primary" style={{ marginTop: '20px' }}>
+                            {
+                                showRecommendations &&
+                                    <RecommendationCard recommendationData={recommendations} />
+                            }
+                            <Button variant="contained" color="primary" style={{ marginTop: '20px' }} onClick={fetchRecommendations}>
                                 Show Recommendation
                             </Button>
-                            <div style={{ marginTop: '20px' }}>
-                                {/* {recommendations.map((rec, index) => (
-                                <Typography key={index} style={{ color: "#FFFFFF", marginTop: '10px' }}>- {rec}</Typography>
-                            ))} */}
-                            </div>
                         </CardContent>
                     </Card>
                 </div>
