@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## This is the diet recommendation public repo
+
+https://github.com/samthakur587/diet_recomandation
+
 ## Available Scripts
 
 In the project directory, you can run:
