@@ -12,6 +12,7 @@ import ProfilePage from './pages/profile';
 import HomePage from './pages/home';
 import LogoutPage from './pages/logout';
 import MindfulnessPage from './pages/mindfulness';
+import Yoga from './pages/Yoga/Yoga';
 
 import { createTheme, ThemeProvider } from '@mui/material';
 import { Menu } from '@mui/icons-material';
@@ -87,6 +88,10 @@ function App() {
       {
         path: "/mindfulness",
         element: <MindfulnessPage user={user}/>,
+      },
+      {
+        path: "/yoga",
+        element: <Yoga user={user}/>,
       }
     ]
   )
