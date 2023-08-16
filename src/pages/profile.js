@@ -15,9 +15,13 @@ function ProfilePage() {
       <Avatar alt="User Profile" src="https://cdn.vuetifyjs.com/images/lists/1.jpg" sx={{ width: 120, height: 120, marginY: 2 }} />
       <Typography variant="h6" sx={{ marginY: 1 }}>Username: JohnDoe</Typography>
       <Typography variant="body1" sx={{ marginY: 1 }}>Email: johndoe@example.com</Typography>
-      <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', '& > *': { margin: 1, width: '200px' } }}>
-        <CustomButton variant="contained" fullWidth>Edit Profile</CustomButton>
-        <CustomButton variant="contained" fullWidth>Logout</CustomButton>
+      <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', '& > *': { margin: 1, width: '150px' } }}>
+        <a href='/edit-profile'>
+          <CustomButton variant="contained" >Edit Profile</CustomButton>
+        </a>
+        <a href='/logout'>
+          <CustomButton variant="contained">Logout</CustomButton>
+        </a>
       </Box>
     </Box>
   );

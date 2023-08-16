@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Drawer, Avatar, List, ListItem, ListItemIcon, ListItemText, IconButton } from '@mui/material';
 import { HomeOutlined, FitnessCenter, Spa, LocalDining, Storefront, Group, StarOutline, Settings } from '@mui/icons-material';
 
-const Sidebar = ({ open, toggleDrawer }) => {
+const Sidebar = ({ open, toggleDrawer, user }) => {
   const [selectedItem, setSelectedItem] = useState(0);
 
   const items = [
@@ -38,7 +38,9 @@ const Sidebar = ({ open, toggleDrawer }) => {
       </List>
 
       <div style={{ position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)' }}>
-        <Avatar src="https://cdn.vuetifyjs.com/images/lists/1.jpg" style={{ border: '1px solid white' }} />
+        <a href='/profile'>
+          <Avatar src="https://cdn.vuetifyjs.com/images/lists/1.jpg" style={{ border: '1px solid white' }} />
+        </a>
       </div>
     </Drawer>
   );

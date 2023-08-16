@@ -21,15 +21,17 @@ const CustomButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   const theme = useTheme();
+
+  const user = props.user
 
   return (
     <Box sx={{ padding: '20px 50px', backgroundColor: '#151515', minHeight: '100vh', color: 'white' }}>
       {/* Welcome Section */}
       <Box sx={{ display: 'flex', backgroundColor: '#151515', alignItems: 'center', '& > *': { margin: 2 } }}>
         <Avatar alt="User Profile" src="https://cdn.vuetifyjs.com/images/lists/1.jpg" />
-        <Typography variant="h4">Welcome back, [Username]!</Typography>
+        <Typography variant="h4">Welcome back, {user.username}</Typography>
       </Box>
 
       <Grid container spacing={4}>
