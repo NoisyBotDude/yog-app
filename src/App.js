@@ -10,6 +10,7 @@ import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
 import ProfilePage from './pages/profile';
 import HomePage from './pages/home';
+import LogoutPage from './pages/logout';
 
 import { createTheme, ThemeProvider } from '@mui/material';
 import { Menu } from '@mui/icons-material';
@@ -72,17 +73,15 @@ function App() {
       },
       {
         path: "/profile",
-        element: <ProfilePage />,
-        children: [
-          {
-            path: "edit",
-            element: <EditProfile />,
-          }
-        ]
+        element: <ProfilePage user={user} loading={loading}/>,
       },
       {
-        path: "edit-profile",
-        element: <EditProfile />,
+        path: "/edit-profile",
+        element: <EditProfile user={user} loading={loading}/>,
+      },
+      {
+        path: "/logout",
+        element: <LogoutPage />,
       }
     ]
   )

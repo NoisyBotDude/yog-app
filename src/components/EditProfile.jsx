@@ -30,17 +30,23 @@ const CustomTextField = styled(TextField)(({ theme }) => ({
   },
 }));
 
-function EditProfile() {
+function EditProfile(props) {
+  const user = props.user
+  console.log(user)
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100vh', backgroundColor: '#151515', color: 'white', padding: '20px' }}>
-      <Typography variant="h4" sx={{ marginBottom: 3 }}>Edit Profile</Typography>
-      <Avatar alt="User Profile" src="https://cdn.vuetifyjs.com/images/lists/1.jpg" sx={{ width: 120, height: 120, marginY: 2 }} />
-      <CustomTextField variant="outlined" label="Username" fullWidth sx={{ marginY: 1, width: '80%' }} defaultValue="JohnDoe" />
-      <CustomTextField variant="outlined" label="Email" fullWidth sx={{ marginY: 1, width: '80%' }} defaultValue="johndoe@example.com" />
-      <CustomTextField variant="outlined" type="password" label="Change Password" fullWidth sx={{ marginY: 1, width: '80%' }} />
-      <CustomTextField variant="outlined" type="password" label="Confirm New Password" fullWidth sx={{ marginY: 1, width: '80%' }} />
-      <CustomButton variant="contained" fullWidth sx={{ marginY: 2, width: '80%' }}>Update Profile</CustomButton>
-    </Box>
+    <>
+      {!props.loading && 
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100vh', backgroundColor: '#151515', color: 'white', padding: '20px' }}>
+          <Typography variant="h4" sx={{ marginBottom: 3 }}>Edit Profile</Typography>
+          <Avatar alt="User Profile" src="https://cdn.vuetifyjs.com/images/lists/1.jpg" sx={{ width: 120, height: 120, marginY: 2 }} />
+          <CustomTextField variant="outlined" label="Username" fullWidth sx={{ marginY: 1, width: '80%' }} defaultValue={user.username} disabled/>
+          <CustomTextField variant="outlined" label="Email" fullWidth sx={{ marginY: 1, width: '80%' }} defaultValue={user.email} />
+          <CustomTextField variant="outlined" type="password" label="Change Password" fullWidth sx={{ marginY: 1, width: '80%' }} />
+          <CustomTextField variant="outlined" type="password" label="Confirm New Password" fullWidth sx={{ marginY: 1, width: '80%' }} />
+          <CustomButton variant="contained" fullWidth sx={{ marginY: 2, width: '80%' }}>Update Profile</CustomButton>
+        </Box>
+      }
+    </>
   );
 }
 
