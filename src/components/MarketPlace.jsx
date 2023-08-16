@@ -2,13 +2,20 @@ import React, { useState } from 'react';
 import Category from './Category';
 import ProductCard from './Product';
 
+import TShirt from '../images/pic-1.jpeg';
+import Dumbell from '../images/dumbell.webp';
+import YogaMat from '../images/yoga-mat.webp';
+import Protein from '../images/protein.webp';
+
 const Marketplace = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const products = [
     // Sample data - you can replace this with real data from your API
-    { id: 1, category: 'gym equipments', name: 'Dumbbell', price: '$20', imageUrl: 'placeholder-image-url' },
-    { id: 2, category: 'proteins', name: 'Whey Protein', price: '$50', imageUrl: 'placeholder-image-url' },
+    { id: 1, category: 'gym equipments', name: 'Dumbbell', price: '$20', imageUrl: Dumbell },
+    { id: 4, category: 'proteins', name: 'Casein Protein', price: '$40', imageUrl: Protein },
+    { id: 5, category: 'sports wear', name: 'T-Shirt', price: '$10', imageUrl: TShirt },
+    { id: 6, category: 'yoga mats', name: 'Mat', price: '$15', imageUrl: YogaMat}
     // ... Add more sample products
   ];
 
