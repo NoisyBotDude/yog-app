@@ -13,6 +13,8 @@ import HomePage from './pages/home';
 import LogoutPage from './pages/logout';
 import MindfulnessPage from './pages/mindfulness';
 import Yoga from './pages/Yoga/Yoga';
+import MarketplacePage from './pages/marketplace';
+import PricingPage from './pages/pricing';
 
 import { createTheme, ThemeProvider } from '@mui/material';
 import { Menu } from '@mui/icons-material';
@@ -91,8 +93,16 @@ function App() {
         element: <MindfulnessPage user={user}/>,
       },
       {
-        path: "/yoga",
+        path: "/virtual-trainer",
         element: <Yoga user={user}/>,
+      },
+      {
+        path: "/marketplace",
+        element: <MarketplacePage user={user}/>,
+      },
+      {
+        path: "/pricing",
+        element: <PricingPage user={user}/>,
       }
     ]
   )

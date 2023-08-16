@@ -6,14 +6,14 @@ const Sidebar = ({ open, toggleDrawer, user }) => {
   const [selectedItem, setSelectedItem] = useState(0);
 
   const items = [
-    { label: 'Home', icon: <HomeOutlined /> },
-    { label: 'Virtual Trainer', icon: <FitnessCenter /> },
-    { label: 'Mindfulness', icon: <Spa /> },
-    { label: 'Diet And Nutrition', icon: <LocalDining /> },
-    { label: 'Marketplace', icon: <Storefront /> },
-    { label: 'Community', icon: <Group /> },
-    { label: 'Join Premium', icon: <StarOutline /> },
-    { label: 'Settings', icon: <Settings /> },
+    { label: 'Home', icon: <HomeOutlined />, link: '/' },
+    { label: 'Virtual Trainer', icon: <FitnessCenter />, link: '/virtual-trainer' },
+    { label: 'Mindfulness', icon: <Spa />, link: '/mindfulness' },
+    { label: 'Diet And Nutrition', icon: <LocalDining />, link: '/diet-and-nutrition' },
+    { label: 'Marketplace', icon: <Storefront />, link: '/marketplace' },
+    { label: 'Community', icon: <Group />, link: '/community' },
+    { label: 'Join Premium', icon: <StarOutline />, link: '/pricing' },
+    { label: 'Settings', icon: <Settings />, link: '/profile' },
   ];
 
   return (
@@ -28,12 +28,14 @@ const Sidebar = ({ open, toggleDrawer, user }) => {
       
       <List style={{ backgroundColor: '#151515', borderRadius: '15px', margin: '0 16px', padding: '16px 0' }}>
         {items.map((item, index) => (
-          <ListItem button key={index} onClick={() => setSelectedItem(index)} style={{ justifyContent: 'center' }}>
-            <ListItemIcon style={{ color: selectedItem === index ? 'white' : 'grey' }}>
-              {item.icon}
-            </ListItemIcon>
-            <ListItemText primary={item.label} style={{ color: selectedItem === index ? 'white' : 'grey' }} />
-          </ListItem>
+          <a href={item.link} className='text-decoration-none'>
+            <ListItem button key={index} onClick={() => setSelectedItem(index)} style={{ justifyContent: 'center' }}>
+              <ListItemIcon style={{ color: selectedItem === index ? 'white' : 'grey' }}>
+                {item.icon}
+              </ListItemIcon>
+              <ListItemText primary={item.label} style={{ color: selectedItem === index ? 'white' : 'grey' }} />
+            </ListItem>
+          </a>
         ))}
       </List>
 

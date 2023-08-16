@@ -51,7 +51,7 @@ const MindfulnessPage = (props) => {
     <Container style={{ backgroundColor: "#1E1E1E", minHeight: '100vh', padding: '2em', backgroundImage: 'url("/path/to/your/background/image.jpg")', backgroundSize: 'cover', fontFamily: 'Roboto, sans-serif' }}>
       {
         showMentalHealthResult ? (
-          <MindfulnessResult gad7Score={gad7Score} phq9Score={phq9Score} user={props.user} />
+          <MindfulnessResult gad7Score={gad7Score} phq9Score={phq9Score} user={props} />
         ) : (
           <>
             <Typography variant="h4" gutterBottom style={{ color: "#FFFFFF", marginBottom: '20px' }}>
