@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button, Typography, Paper, Box } from '@mui/material';
+import Sleepiness from './Sleepiness';
 
 const MindfulnessResult = ({ gad7Score, phq9Score, user }) => {
     const [savedData, setSavedData] = useState(null);
@@ -32,6 +33,8 @@ const MindfulnessResult = ({ gad7Score, phq9Score, user }) => {
         // Mock saving to the database
         setSavedData(dataToSave);
 
+        console.log('Saving data to the database...', user);
+
         await fetch(`http://localhost:3000/users/${localStorage.getItem('user_id')}`, {
             method: 'PATCH',
             headers: {
@@ -43,8 +46,16 @@ const MindfulnessResult = ({ gad7Score, phq9Score, user }) => {
         }).then(response => response.json())
             .catch((error) => {
                 console.error('Error:', error);
+            }).finally(() => {
+                setShowSleepiness(true);
             })
     };
+
+    const [showSleepiness, setShowSleepiness] = useState(false);
+
+    if (showSleepiness) {
+        return <Sleepiness user={user} />;
+    }
 
     return (
         <Paper style={{ padding: '20px', backgroundColor: '#151515' }}>
@@ -68,14 +79,7 @@ const MindfulnessResult = ({ gad7Score, phq9Score, user }) => {
                 Save Results
             </Button>
 
-            {savedData && (
-                <Box marginTop={4}>
-                    <Typography variant="h6" color="primary" gutterBottom>
-                        Saved Data:
-                    </Typography>
-                    <pre style={{ color: 'white' }}>{JSON.stringify(savedData, null, 2)}</pre>
-                </Box>
-            )}
+            
         </Paper>
     );
 };

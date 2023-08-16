@@ -8,6 +8,7 @@ const MindfulnessPage = (props) => {
   const [showMentalHealthResult, setShowMentalHealthResult] = useState(false);
   const [phq9Score, setPhq9Score] = useState(0);
   const [gad7Score, setGad7Score] = useState(0);
+  const [isIncomplete, setIsIncomplete] = useState(true);
 
   useEffect(() => {
     // Fetching the questions
@@ -24,8 +25,14 @@ const MindfulnessPage = (props) => {
   }, []);
 
   const handleOptionChange = (question, value) => {
-    setAnswers(prev => ({ ...prev, [question]: value }));
+    setAnswers(prev => {
+      const updatedAnswers = { ...prev, [question]: value };
+      const hasMissingAnswers = questions.some(q => !updatedAnswers[q.question]);
+      setIsIncomplete(hasMissingAnswers);
+      return updatedAnswers;
+    });
   };
+
 
   const calculateScores = (answers, questions) => {
     for (let i = 2; i < questions.length; i++) {
@@ -44,14 +51,14 @@ const MindfulnessPage = (props) => {
     setShowMentalHealthResult(true);
     return { phq9Score, gad7Score };
   };
-  
+
 
 
   return (
     <Container style={{ backgroundColor: "#1E1E1E", minHeight: '100vh', padding: '2em', backgroundImage: 'url("/path/to/your/background/image.jpg")', backgroundSize: 'cover', fontFamily: 'Roboto, sans-serif' }}>
       {
         showMentalHealthResult ? (
-          <MindfulnessResult gad7Score={gad7Score} phq9Score={phq9Score} user={props} />
+          <MindfulnessResult gad7Score={gad7Score} phq9Score={phq9Score} user={props.user} />
         ) : (
           <>
             <Typography variant="h4" gutterBottom style={{ color: "#FFFFFF", marginBottom: '20px' }}>
@@ -69,10 +76,16 @@ const MindfulnessPage = (props) => {
                 </RadioGroup>
               </Paper>
             ))}
-            <Button variant="contained" color="primary" style={{ marginTop: '30px', padding: '10px 20px', borderRadius: '8px', fontWeight: 'bold' }} 
-              onClick={() => calculateScores(answers, questions)}>
-                Submit
+            <Button
+              variant="contained"
+              color="primary"
+              style={{ marginTop: '30px', padding: '10px 20px', borderRadius: '8px', fontWeight: 'bold' }}
+              onClick={() => calculateScores(answers, questions)}
+              disabled={isIncomplete}
+            >
+              Submit
             </Button>
+
           </>
         )
       }
