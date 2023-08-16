@@ -1,0 +1,384 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ashish",
+      "height": "5.7",
+      "weight": "67",
+      "age": "21",
+      "username": "ashish",
+      "password": "ashish123",
+      "diet_preferences": {
+        "vegetarian": true,
+        "diabetes": false,
+        "medication": false,
+        "grocery_available": [
+          "fruits",
+          "vegetables",
+          "rice",
+          "chicken"
+        ]
+      },
+      "nationality": "Indian",
+      "regionality": "South-Indian",
+      "calories_per_day_prescribed": 2000,
+      "nutrition_partition": [
+        {
+          "protein": "120g",
+          "carbohydrates": "300g",
+          "fat": "60g",
+          "vitamin_c": "100mg",
+          "vitamin_d": "800IU",
+          "calcium": "1000mg",
+          "date": "2023-08-14"
+        },
+        {
+          "protein": "120g",
+          "carbohydrates": "300g",
+          "fat": "60g",
+          "vitamin_c": "100mg",
+          "vitamin_d": "800IU",
+          "calcium": "1000mg",
+          "date": "2023-08-15"
+        }
+      ],
+      "exercises": [
+        {
+          "date": "2023-08-15",
+          "activity": "Running",
+          "duration_minutes": 30,
+          "calories_burned": 300
+        },
+        {
+          "date": "2023-08-14",
+          "activity": "Swimming",
+          "duration_minutes": 45,
+          "calories_burned": 400
+        }
+      ],
+      "sleeptrack_records": [
+        {
+          "date": "2023-08-15",
+          "sleep_start": "22:00",
+          "sleep_end": "06:00",
+          "hours_slept": 8
+        },
+        {
+          "date": "2023-08-14",
+          "sleep_start": "23:30",
+          "sleep_end": "07:00",
+          "hours_slept": 7.5
+        }
+      ],
+      "mental_health": [
+        {
+          "date": "2023-08-15",
+          "gad7_score": 6,
+          "phq9_score": 4,
+          "interpretation": "It is unlikely that you are abnormally sleepy."
+        },
+        {
+          "date": "2023-08-14",
+          "gad7_score": 12,
+          "phq9_score": 8,
+          "interpretation": "You may be excessively sleepy depending on the situation. You may want to consider seeking medical attention."
+        }
+      ],
+      "neuro_sleepiness": [
+        {
+          "date": "2023-08-15",
+          "score": 5,
+          "interpretation": "It is unlikely that you are abnormally sleepy."
+        },
+        {
+          "date": "2023-08-14",
+          "score": 11,
+          "interpretation": "You have an average amount of daytime sleepiness."
+        }
+      ]
+    },
+    {
+      "username": "abinash",
+      "email": "ashishsarmah11@gmail.com",
+      "password": "As@222001",
+      "id": 2
+    },
+    {
+      "username": "pranjal",
+      "email": "prajalkar@gmail.com",
+      "password": "pranjal123",
+      "id": 3
+    }
+  ],
+  "mental_health_questions": [
+    {
+      "question": "How are you feeling today?",
+      "options": [
+        "Good",
+        "Okay",
+        "Not so great"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "Are you dumb?",
+      "options": [
+        "yes",
+        "maybe",
+        "Not so much"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "How's your day going?",
+      "options": [
+        "Great",
+        "Okay",
+        "Could be better"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "PHQ-9: Little interest or pleasure in doing things.",
+      "options": [
+        "Not at all",
+        "Several days",
+        "More than half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "PHQ-9: Feeling down, depressed, or hopeless.",
+      "options": [
+        "Not at all",
+        "Several days",
+        "More than half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "PHQ-9: Trouble falling or staying asleep, or sleeping too much.",
+      "options": [
+        "Not at all",
+        "Several days",
+        "More than half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "PHQ-9: Feeling tired or having little energy.",
+      "options": [
+        "Not at all",
+        "Several days",
+        "More than half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "PHQ-9: Poor appetite or overeating.",
+      "options": [
+        "Not at all",
+        "Several days",
+        "More than half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "PHQ-9: Feeling bad about yourself – or that you are a failure or have let yourself or your family down.",
+      "options": [
+        "Not at all",
+        "Several days",
+        "More than half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "PHQ-9: Trouble concentrating on things, such as reading the newspaper or watching television.",
+      "options": [
+        "Not at all",
+        "Several days",
+        "More than half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "PHQ-9: Moving or speaking so slowly that other people could have noticed. Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual.",
+      "options": [
+        "Not at all",
+        "Several days",
+        "More than half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "PHQ-9: Thoughts that you would be better off dead, or of hurting yourself in some way.",
+      "options": [
+        "Not at all",
+        "Several days",
+        "More than half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "GAD-7: Feeling nervous, anxious, or on edge.",
+      "options": [
+        "Not at all sure",
+        "Several days",
+        "Over half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "GAD-7: Not being able to stop or control worrying.",
+      "options": [
+        "Not at all sure",
+        "Several days",
+        "Over half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "GAD-7: Worrying too much about different things.",
+      "options": [
+        "Not at all sure",
+        "Several days",
+        "Over half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "GAD-7: Trouble relaxing.",
+      "options": [
+        "Not at all sure",
+        "Several days",
+        "Over half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "GAD-7: Being so restless that it’s hard to sit still.",
+      "options": [
+        "Not at all sure",
+        "Several days",
+        "Over half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "GAD-7: Becoming easily annoyed or irritable.",
+      "options": [
+        "Not at all sure",
+        "Several days",
+        "Over half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    },
+    {
+      "question": "GAD-7: Feeling afraid as if something awful might happen.",
+      "options": [
+        "Not at all sure",
+        "Several days",
+        "Over half the days",
+        "Nearly every day"
+      ],
+      "selectedOption": null
+    }
+  ],
+  "sleepiness_q": [
+    {
+      "question": "Situation: Sitting and reading",
+      "options": [
+        "No chance of Dozing",
+        "Slight Chance of Dozing",
+        "Moderate chance of Dozing",
+        "High Chance of Dozing"
+      ],
+      "chanceOfDozing": null
+    },
+    {
+      "question": "Situation: Watching TV",
+      "options": [
+        "No chance of Dozing",
+        "Slight Chance of Dozing",
+        "Moderate chance of Dozing",
+        "High Chance of Dozing"
+      ],
+      "chanceOfDozing": null
+    },
+    {
+      "question": "Situation: Sitting inactive in a public place (e.g., a theater or a meeting)",
+      "options": [
+        "No chance of Dozing",
+        "Slight Chance of Dozing",
+        "Moderate chance of Dozing",
+        "High Chance of Dozing"
+      ],
+      "chanceOfDozing": null
+    },
+    {
+      "question": "Situation: As a passenger in a car for an hour without a break",
+      "options": [
+        "No chance of Dozing",
+        "Slight Chance of Dozing",
+        "Moderate chance of Dozing",
+        "High Chance of Dozing"
+      ],
+      "chanceOfDozing": null
+    },
+    {
+      "question": "Situation: Lying down to rest in the afternoon when circumstances permit",
+      "options": [
+        "No chance of Dozing",
+        "Slight Chance of Dozing",
+        "Moderate chance of Dozing",
+        "High Chance of Dozing"
+      ],
+      "chanceOfDozing": null
+    },
+    {
+      "question": "Situation: Sitting and talking to someone",
+      "options": [
+        "No chance of Dozing",
+        "Slight Chance of Dozing",
+        "Moderate chance of Dozing",
+        "High Chance of Dozing"
+      ],
+      "chanceOfDozing": null
+    },
+    {
+      "question": "Situation: Sitting quietly after a lunch without alcohol",
+      "options": [
+        "No chance of Dozing",
+        "Slight Chance of Dozing",
+        "Moderate chance of Dozing",
+        "High Chance of Dozing"
+      ],
+      "chanceOfDozing": null
+    },
+    {
+      "question": "Situation: In a car, while stopped for a few minutes in traffic",
+      "options": [
+        "No chance of Dozing",
+        "Slight Chance of Dozing",
+        "Moderate chance of Dozing",
+        "High Chance of Dozing"
+      ],
+      "chanceOfDozing": null
+    }
+  ]
+}
