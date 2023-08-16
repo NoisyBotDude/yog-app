@@ -40,7 +40,7 @@ const Dashboard = (props) => {
           <StyledCard>
             <CardContent>
               <Typography variant="h6">Nutrition Summary</Typography>
-              <Typography>Your daily calorie intake should be 2200 kcal.</Typography>
+              <Typography>Your daily calorie intake should be {user.calories_per_day_prescribed ? user.calories_per_day_prescribed : 0} kcal.</Typography>
             </CardContent>
           </StyledCard>
         </Grid>

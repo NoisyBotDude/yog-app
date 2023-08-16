@@ -41,7 +41,7 @@ const MindfulnessResult = ({ gad7Score, phq9Score, user }) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                mental_health: user.mental_health.concat(dataToSave)
+                mental_health:  user.mental_health ? user.mental_health.concat(dataToSave) : [dataToSave]
             })
         }).then(response => response.json())
             .catch((error) => {

@@ -129,26 +129,28 @@ function EditProfile(props) {
                       Diet Preferences
                   </Typography>
                   <FormControlLabel
-                      control={<Checkbox checked={userData.diet_preferences.vegetarian} onChange={(e) => handleInputChange(e, 'diet_preferences')} name="vegetarian" color="primary" />}
+                      control={<Checkbox checked={userData.diet_preferences?.vegetarian} onChange={(e) => handleInputChange(e, 'diet_preferences')} name="vegetarian" color="primary" />}
                       label="Vegetarian"
                       labelPlacement="end"
                   />
                   <FormControlLabel
-                      control={<Checkbox checked={userData.diet_preferences.diabetes} onChange={(e) => handleInputChange(e, 'diet_preferences')} name="diabetes" color="primary" />}
+                      control={<Checkbox checked={userData.diet_preferences?.diabetes} onChange={(e) => handleInputChange(e, 'diet_preferences')} name="diabetes" color="primary" />}
                       label="Diabetes"
                       labelPlacement="end"
                   />
                   <FormControlLabel
-                      control={<Checkbox checked={userData.diet_preferences.medication} onChange={(e) => handleInputChange(e, 'diet_preferences')} name="medication" color="primary" />}
+                      control={<Checkbox checked={userData.diet_preferences?.medication} onChange={(e) => handleInputChange(e, 'diet_preferences')} name="medication" color="primary" />}
                       label="Medication"
                       labelPlacement="end"
                   />
                   <FormControl fullWidth margin="normal" variant="outlined">
                       <InputLabel style={{ color: '#FFF' }}>Groceries Available</InputLabel>
+                      {
+                        userData.diet_preferences ? (
                       <Select
                           multiple
                           name="grocery_available"
-                          value={userData.diet_preferences.grocery_available}
+                          value={userData.diet_preferences?.grocery_available}
                           onChange={(e) => handleInputChange(e, 'diet_preferences')}
                           label="Groceries Available"
                           inputProps={{ style: { color: '#FFF' } }}
@@ -159,6 +161,23 @@ function EditProfile(props) {
                               </MenuItem>
                           ))}
                       </Select>
+                        ) : (
+                          <Select
+                          multiple
+                          name="grocery_available"
+                          value={[]}
+                          onChange={(e) => handleInputChange(e, 'diet_preferences')}
+                          label="Groceries Available"
+                          inputProps={{ style: { color: '#FFF' } }}
+                      >
+                          {['fruits', 'vegetables', 'rice', 'chicken'].map((item) => (
+                              <MenuItem key={item} value={item}>
+                                  {item}
+                              </MenuItem>
+                          ))}
+                      </Select>
+                        )
+                      }
                   </FormControl>
               </CardContent>
           </Card>

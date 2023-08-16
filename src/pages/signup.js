@@ -52,6 +52,7 @@ function SignupPage() {
              }),
         }).then((response) => {
             if (response.ok) {
+                window.location.href = '/login';
                 return response.json();
             } else {
                 throw new Error('Something went wrong');

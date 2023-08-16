@@ -26,7 +26,7 @@ function ProfilePage(props) {
                   </Typography>
                   <Typography style={{ color: "#FFFFFF" }}>Name: {user.name}</Typography>
                   <Typography style={{ color: "#FFFFFF" }}>Age: {user.age}</Typography>
-                  <Typography style={{ color: "#FFFFFF" }}>Height: {user.height} ft</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Height: {user.height} cm</Typography>
                   <Typography style={{ color: "#FFFFFF" }}>Weight: {user.weight} kg</Typography>
                   <Typography style={{ color: "#FFFFFF" }}>Username: {user.username}</Typography>
                   <Typography style={{ color: "#FFFFFF" }}>Email: {user.email}</Typography>
@@ -40,10 +40,10 @@ function ProfilePage(props) {
                   <Typography variant="h6" style={{ color: "#FFFFFF", marginBottom: '15px' }}>
                       Diet Preferences
                   </Typography>
-                  <Typography style={{ color: "#FFFFFF" }}>Vegetarian: {user.diet_preferences.vegetarian ? "Yes" : "No"}</Typography>
-                  <Typography style={{ color: "#FFFFFF" }}>Diabetes: {user.diet_preferences.diabetes ? "Yes" : "No"}</Typography>
-                  <Typography style={{ color: "#FFFFFF" }}>Medication: {user.diet_preferences.medication ? "Yes" : "No"}</Typography>
-                  <Typography style={{ color: "#FFFFFF" }}>Available Groceries: {user.diet_preferences.grocery_available.join(', ')}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Vegetarian: {user.diet_preferences?.vegetarian ? "Yes" : "No"}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Diabetes: {user.diet_preferences?.diabetes ? "Yes" : "No"}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Medication: {user.diet_preferences?.medication ? "Yes" : "No"}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Available Groceries: {user.diet_preferences?.grocery_available.join(', ')}</Typography>
               </CardContent>
           </Card>
 

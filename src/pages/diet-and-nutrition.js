@@ -49,10 +49,10 @@ function DietAndNutrition (props) {
             },
             body: JSON.stringify({
                 bmi: bmi,
-                vag: userData.diet_preferences.vegetarian,
-                diabetes: userData.diet_preferences.diabetes,
-                meditation: userData.diet_preferences.medication ? "true" : "false",
-                gory: userData.diet_preferences.grocery_available.join(','),
+                vag: userData.diet_preferences?.vegetarian,
+                diabetes: userData.diet_preferences?.diabetes,
+                meditation: userData.diet_preferences?.medication ? "true" : "false",
+                gory: userData.diet_preferences?.grocery_available.join(','),
                 nati: userData.nationality,
                 regionality: userData.regionality,
                 exercise: "walking",
@@ -89,15 +89,15 @@ function DietAndNutrition (props) {
                         <CardContent>
                             <Typography variant="h5" style={{ color: "#FFFFFF" }}>User Status</Typography>
                             <Typography style={{ color: "#FFFFFF", marginTop: '20px' }}>Age: {userData.age}</Typography>
-                            <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>Height: {userData.height} cm</Typography>
+                            <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>Height: {userData?.height} cm</Typography>
                             <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>Weight: {userData.weight} kg</Typography>
                             <Typography style={{ color: "#FFFFFF", marginTop: '20px' }}>Dietary Preferences:</Typography>
-                            <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>Vegetarian: {userData.diet_preferences.vegetarian ? "Yes" : "No"}</Typography>
-                            <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>Diabetes: {userData.diet_preferences.diabetes ? "Yes" : "No"}</Typography>
-                            <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>On Medication: {userData.diet_preferences.medication ? "Yes" : "No"}</Typography>
+                            <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>Vegetarian: {userData.diet_preferences?.vegetarian ? "Yes" : "No"}</Typography>
+                            <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>Diabetes: {userData.diet_preferences?.diabetes ? "Yes" : "No"}</Typography>
+                            <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>On Medication: {userData.diet_preferences?.medication ? "Yes" : "No"}</Typography>
                             <Typography style={{ color: "#FFFFFF", marginTop: '10px' }}>
                                 Grocery Available: 
-                                {userData.diet_preferences.grocery_available.join(', ')}
+                                {userData.diet_preferences?.grocery_available.join(', ')}
                             </Typography>
                             <a href='/edit-profile'>
                                 <Button variant='contained' color='primary' style={{ marginTop: '20px' }}>Update</Button>

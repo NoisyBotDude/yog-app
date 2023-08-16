@@ -29,9 +29,12 @@ const SleepinessResult = ({ score, user }) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                neuro_sleepiness: user.neuro_sleepiness.concat(dataToSave)
+                neuro_sleepiness: user.neuro_sleepiness ? user.neuro_sleepiness.concat(dataToSave) : [dataToSave]
             })
-        }).then(response => response.json())
+        }).then(response => {
+            response.json()
+            window.location.href = '/'
+        })
             .catch((error) => {
                 console.error('Error:', error);
             })
