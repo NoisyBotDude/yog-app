@@ -54,6 +54,7 @@ function App() {
       const data = await response.json();
       setUser(data);
       setLoading(false);
+      console.log(data);
     }
   
     fetchUserData();

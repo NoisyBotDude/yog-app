@@ -258,7 +258,7 @@ function Yoga() {
         </div>
         <button
           onClick={stopPose}
-          className="secondary-btn"    
+          className="btn btn-primary"    
         >Stop Pose</button>
       </div>
     )
@@ -267,6 +267,7 @@ function Yoga() {
   return (
     <div
       className="yoga-container"
+      style={{ backgroundColor: '#000000' }}
     >
       <DropDownList
         poseList={poseList}
@@ -278,8 +279,14 @@ function Yoga() {
         />
       <button
           onClick={startYoga}
-          className="secondary-btn"    
+          className="btn btn-primary"    
         >Start Pose</button>
+        <div className=' d-flex justify-content-center w-100'>
+          <p className='text-danger mt-3 w-50 text-center mx-5'>
+            *Please make sure your webcam is on and you are in a well lit room with a clear background and no other people in the frame. 
+            Also make sure you are wearing clothes that contrast with your background. Far away from the camera is better than close up.
+          </p>
+        </div>
     </div>
   )
 }

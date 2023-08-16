@@ -22,7 +22,7 @@ return (
             {poseList.map((pose, index) => (
                 <li key={index} onClick={() => setCurrentPose(pose)}>
                     <div className="dropdown-item-container">
-                        <p className="dropdown-item-1">{pose}</p>
+                        <p className="dropdown-item-1"><strong>{pose}</strong></p>
                         <img 
                             src={poseImages[pose]}
                             className="dropdown-img"

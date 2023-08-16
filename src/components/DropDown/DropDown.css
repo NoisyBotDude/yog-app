@@ -31,6 +31,7 @@
     height: 40vh;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    background-color: rgb(63, 68, 66);
 }
 
 .dropdown-custom-menu::-webkit-scrollbar {
@@ -41,14 +42,18 @@
     width: 400px;
     display: flex;
     border-radius: 4px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .dropdown-item-1 {
     margin: 10px;
+    color: white;
+    
 }
 .dropdown-img {
     width: 80px;
     height: 80px;
+    margin: 10px;
+    border-radius: 4px;
 }

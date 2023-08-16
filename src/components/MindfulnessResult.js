@@ -33,15 +33,12 @@ const MindfulnessResult = ({ gad7Score, phq9Score, user }) => {
         setSavedData(dataToSave);
 
         await fetch(`http://localhost:3000/users/${localStorage.getItem('user_id')}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                username: user.username,
-                password: user.password,
-                email: user.email,
-                mental_health: [dataToSave]
+                mental_health: user.mental_health.concat(dataToSave)
             })
         }).then(response => response.json())
             .catch((error) => {
