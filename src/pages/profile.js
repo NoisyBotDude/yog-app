@@ -1,4 +1,4 @@
-import { Typography, Box, Avatar, Button, styled } from '@mui/material';
+import { Container, Typography, Card, CardContent, Box, Avatar, Button, styled } from '@mui/material';
 
 const CustomButton = styled(Button)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
@@ -14,20 +14,63 @@ function ProfilePage(props) {
   return (
     <>
       {!props.loading &&
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100vh', backgroundColor: '#151515', color: 'white', padding: '20px' }}>
-          <Typography variant="h4" sx={{ marginBottom: 3 }}>Profile</Typography>
-          <Avatar alt="User Profile" src="https://cdn.vuetifyjs.com/images/lists/1.jpg" sx={{ width: 120, height: 120, marginY: 2 }} />
-          <Typography variant="h6" sx={{ marginY: 1 }}>Username: {user.username}</Typography>
-          <Typography variant="body1" sx={{ marginY: 1 }}>Email: {user.email}</Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', '& > *': { margin: 1, width: '150px' } }}>
+          <Container style={{ backgroundColor: "#1E1E1E", minHeight: '100vh', padding: '2em' }}>
+          <Typography variant="h4" style={{ color: "#FFFFFF", marginBottom: '20px' }}>
+              Profile
+          </Typography>
+
+          <Card style={{ backgroundColor: '#292929', marginBottom: '20px' }}>
+              <CardContent>
+                  <Typography variant="h6" style={{ color: "#FFFFFF", marginBottom: '15px' }}>
+                      Basic Information
+                  </Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Name: {user.name}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Age: {user.age}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Height: {user.height} ft</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Weight: {user.weight} kg</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Username: {user.username}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Email: {user.email}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Nationality: {user.nationality}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Regionality: {user.regionality}</Typography>
+              </CardContent>
+          </Card>
+
+          <Card style={{ backgroundColor: '#292929', marginBottom: '20px' }}>
+              <CardContent>
+                  <Typography variant="h6" style={{ color: "#FFFFFF", marginBottom: '15px' }}>
+                      Diet Preferences
+                  </Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Vegetarian: {user.diet_preferences.vegetarian ? "Yes" : "No"}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Diabetes: {user.diet_preferences.diabetes ? "Yes" : "No"}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Medication: {user.diet_preferences.medication ? "Yes" : "No"}</Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>Available Groceries: {user.diet_preferences.grocery_available.join(', ')}</Typography>
+              </CardContent>
+          </Card>
+
+          <Card style={{ backgroundColor: '#292929', marginBottom: '20px' }}>
+              <CardContent>
+                  <Typography variant="h6" style={{ color: "#FFFFFF", marginBottom: '15px' }}>
+                      Daily Prescribed Calories
+                  </Typography>
+                  <Typography style={{ color: "#FFFFFF" }}>{user.calories_per_day_prescribed} kcal/day</Typography>
+              </CardContent>
+          </Card>
+
+          {/* Button for edit profile and logout */}
+          <Box sx={{ display: 'flex', justifyContent: 'center', }}>
             <a href='/edit-profile'>
-              <CustomButton variant="contained" >Edit Profile</CustomButton>
+              <CustomButton variant="contained">
+                  Edit Profile
+              </CustomButton>
             </a>
             <a href='/logout'>
-              <CustomButton variant="contained">Logout</CustomButton>
+              <CustomButton variant="contained">
+                  Logout
+              </CustomButton>
             </a>
           </Box>
-        </Box>
+
+      </Container>
       }
     </>
   );

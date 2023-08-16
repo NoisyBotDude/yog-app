@@ -15,6 +15,7 @@ import MindfulnessPage from './pages/mindfulness';
 import Yoga from './pages/Yoga/Yoga';
 import MarketplacePage from './pages/marketplace';
 import PricingPage from './pages/pricing';
+import DietAndNutrition from './pages/diet-and-nutrition';
 
 import { createTheme, ThemeProvider } from '@mui/material';
 import { Menu } from '@mui/icons-material';
@@ -103,6 +104,10 @@ function App() {
       {
         path: "/pricing",
         element: <PricingPage user={user}/>,
+      },
+      {
+        path: "/diet-and-nutrition",
+        element: <DietAndNutrition user={user} loading={loading}/>,
       }
     ]
   )
