@@ -5,7 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## This is the diet recommendation public repo
 
 https://github.com/samthakur587/diet_recomandation
-
+## This is the distraction app public repo
+https://github.com/pranjalkar99/Yog-Distraction.git
 ## Available Scripts
 
 In the project directory, you can run:
