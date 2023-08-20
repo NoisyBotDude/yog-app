@@ -4,8 +4,8 @@ FROM node:14
 # Set the working directory inside the container
 WORKDIR /app
 
-# Set the NODE_OPTIONS environment variable
-ENV NODE_OPTIONS=--openssl-legacy-provider
+# Set the NODE_OPTIONS environment variable (without the problematic flag)
+ENV NODE_OPTIONS=--max-old-space-size=1024
 
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
